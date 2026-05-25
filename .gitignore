@@ -16,27 +16,23 @@ build/
 dist/
 *.egg-info/
 *.egg
-develop-eggs/
-downloads/
-eggs/
-.eggs/
 
 # Jupyter Notebook
 .ipynb_checkpoints
 *.ipynb_checkpoints/
 
-# Archivos sensibles y variables de entorno
+# Archivos sensibles
 .env
 .env.local
 *.env
 
-# Datasets grandes (no subir al repositorio)
+# Datasets grandes
 data/raw/*
 data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
-# Modelos entrenados (no subir al repositorio)
+# Modelos entrenados
 models/*
 !models/.gitkeep
 *.pkl
@@ -47,7 +43,7 @@ models/*
 *.log
 logs/
 
-# IDEs y editores
+# IDEs
 .vscode/
 .idea/
 *.swp
@@ -56,11 +52,11 @@ logs/
 .DS_Store
 Thumbs.db
 
-# Archivos de Flask
+# Flask
 instance/
 .webassets-cache
 
-# Coverage de tests
+# Tests
 .coverage
 htmlcov/
 .pytest_cache/

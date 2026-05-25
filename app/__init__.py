@@ -10,7 +10,6 @@ def create_app(config_name="default"):
     app = Flask(__name__)
     app.config.from_object("config.Config")
 
-    # Registrar las rutas
     from app.routes import main
     app.register_blueprint(main)
 

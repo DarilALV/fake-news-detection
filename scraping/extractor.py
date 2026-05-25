@@ -1,8 +1,8 @@
 """
 Modulo de extraccion de contenido desde URLs de noticias.
 
-Este modulo se desarrollara completamente en el Sprint 5.
-Por ahora, contiene la estructura base.
+Sprint 1: estructura base lista.
+Sprint 5: implementacion completa con manejo de errores.
 """
 
 import requests
@@ -47,13 +47,11 @@ def extract_with_beautifulsoup(html):
     """Extrae el contenido principal usando BeautifulSoup como respaldo."""
     soup = BeautifulSoup(html, "lxml")
 
-    # Buscar etiquetas comunes que contienen el cuerpo del articulo
     for tag in ["article", "main"]:
         element = soup.find(tag)
         if element:
             return element.get_text(separator=" ", strip=True)
 
-    # Si no encontramos nada, devolver todo el texto
     return soup.get_text(separator=" ", strip=True)
 
 
@@ -61,10 +59,8 @@ def extract_article(url):
     """Funcion principal: extrae el contenido limpio de una noticia."""
     html = fetch_html(url)
 
-    # Intentar con Trafilatura primero
     content = extract_with_trafilatura(html)
 
-    # Si Trafilatura falla, usar BeautifulSoup como respaldo
     if not content:
         content = extract_with_beautifulsoup(html)
 

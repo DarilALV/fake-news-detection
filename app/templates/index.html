@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector de Noticias Falsas | IA + NLP</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🔍</span>
+                <h1>FakeNews Detector</h1>
+            </div>
+            <nav class="nav">
+                <a href="#inicio" class="nav-link active">Inicio</a>
+                <a href="#como-funciona" class="nav-link">Cómo funciona</a>
+                <a href="#equipo" class="nav-link">Equipo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="inicio" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2 class="hero-title">
+                        Detecta noticias falsas <br>
+                        <span class="highlight">con Inteligencia Artificial</span>
+                    </h2>
+                    <p class="hero-subtitle">
+                        Sistema basado en Procesamiento de Lenguaje Natural y Machine Learning
+                        que analiza el texto de una noticia y predice si es verdadera o falsa.
+                    </p>
+
+                    <div class="form-card">
+                        <form id="analyze-form" class="form" action="/predict" method="POST">
+                            <div class="form-tabs">
+                                <button type="button" class="tab-btn active" data-tab="text">
+                                    📝 Pegar texto
+                                </button>
+                                <button type="button" class="tab-btn" data-tab="url">
+                                    🔗 Analizar URL
+                                </button>
+                            </div>
+
+                            <div class="form-content tab-content active" data-content="text">
+                                <label for="news-text">Pega aquí el contenido de la noticia:</label>
+                                <textarea
+                                    id="news-text"
+                                    name="text"
+                                    rows="6"
+                                    placeholder="Ejemplo: 'Científicos descubren que beber agua caliente cura enfermedades...'"></textarea>
+                            </div>
+
+                            <div class="form-content tab-content" data-content="url">
+                                <label for="news-url">Ingresa la URL del artículo:</label>
+                                <input
+                                    type="url"
+                                    id="news-url"
+                                    name="url"
+                                    placeholder="https://ejemplo-de-noticia.com/articulo">
+                            </div>
+
+                            <button type="submit" class="btn-primary">
+                                Analizar noticia
+                                <span class="btn-arrow">→</span>
+                            </button>
+                        </form>
+
+                        <div class="form-status">
+                            <span class="status-badge">⚙️ Sprint 1 — Pantalla inicial</span>
+                            <p class="status-text">
+                                El modelo de IA estará operativo a partir del Sprint 3 (1 de junio).
+                                Por ahora, este formulario muestra la interfaz definitiva.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="como-funciona" class="features">
+            <div class="container">
+                <h3 class="section-title">¿Cómo funciona?</h3>
+                <p class="section-subtitle">Cinco etapas automáticas en menos de 6 segundos</p>
+
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-number">1</div>
+                        <h4>Recolección</h4>
+                        <p>Obtenemos el contenido de la noticia desde una URL o desde el texto que pegas.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">2</div>
+                        <h4>Limpieza</h4>
+                        <p>Normalizamos el texto, eliminamos signos y palabras vacías.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">3</div>
+                        <h4>Vectorización</h4>
+                        <p>Transformamos el texto en números usando TF-IDF.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">4</div>
+                        <h4>Clasificación</h4>
+                        <p>Un modelo de Regresión Logística analiza el vector y predice.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-number">5</div>
+                        <h4>Resultado</h4>
+                        <p>Recibes la predicción con un porcentaje de confianza.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="equipo" class="team">
+            <div class="container">
+                <h3 class="section-title">Equipo de desarrollo</h3>
+                <div class="team-grid">
+                    <div class="team-card">
+                        <div class="team-avatar">MC</div>
+                        <h4>Mauricio Coca</h4>
+                        <p class="team-role">Investigación, NLP y Modelo</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">IM</div>
+                        <h4>Israel Mollo</h4>
+                        <p class="team-role">Flask y Frontend</p>
+                    </div>
+                    <div class="team-card">
+                        <div class="team-avatar">DL</div>
+                        <h4>Dari Lopez</h4>
+                        <p class="team-role">Scraping e Integración</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 Sistema de Detección de Noticias Falsas — Proyecto Académico</p>
+            <p class="footer-sprint">Sprint 1 / 6 — 25 de mayo de 2026</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
