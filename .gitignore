@@ -1,0 +1,72 @@
+# Entornos virtuales
+venv/
+env/
+.venv/
+ENV/
+
+# Cache de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Distribucion / paquetes
+build/
+dist/
+*.egg-info/
+*.egg
+develop-eggs/
+downloads/
+eggs/
+.eggs/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+
+# Archivos sensibles y variables de entorno
+.env
+.env.local
+*.env
+
+# Datasets grandes (no subir al repositorio)
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+
+# Modelos entrenados (no subir al repositorio)
+models/*
+!models/.gitkeep
+*.pkl
+*.joblib
+*.h5
+
+# Logs
+*.log
+logs/
+
+# IDEs y editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Archivos de Flask
+instance/
+.webassets-cache
+
+# Coverage de tests
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/
+
+# Sistema operativo
+.DS_Store
+Thumbs.db
+desktop.ini
